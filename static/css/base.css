@@ -1,0 +1,134 @@
+/************
+ *
+ * Filename -  base.css
+ *
+ * Purpose -   css for Assignment 1 pages: home.html and about.html
+ *
+ * Copyright:  none
+ *
+ ************/
+
+
+/* Base */
+html
+{
+  background-color: rgb(53, 53, 53);
+  font-family: 'Merriweather', serif;
+}
+
+label
+{
+  color: #8cb67f;
+}
+
+/* NavBar */
+
+/* Background color */
+.navbar
+{
+  background-color: rgb(68, 68, 68);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a
+{
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  padding: 1% 4%;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover
+{
+  background-color: rgb(91, 86, 95);
+  color: white;
+}
+
+/* Change the color of the links on active */
+.navbar a.active
+{
+  background-color: rgb(40, 27, 85);
+  color: white;
+}
+
+/* 
+
+/* TODO */
+
+/* Home */
+.title
+{
+  color: #8cb67f;
+  text-align: center;
+  font-size: 400%;
+  padding: 2% 2%;
+  text-shadow: 2px 2px 2px #aaa;
+}
+.container
+{
+  text-align: center;
+  border-radius: 400px;
+  background-color: #f2f2f2;
+  padding: 2%;
+}
+
+#messagebox
+{
+  width: 100%;
+  padding: 1% 1%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* About */
+
+
+
+
+
+
+
+/* Class Material */
+/*
+#container-div
+{
+  font-family: Arial, sans-serif;
+}
+
+span
+{
+  background-color: #98FB98;
+  font-size: 3rem;
+}
+
+img
+{
+  position: relative;
+  z-index: 1;
+}
+
+#vertical
+{
+  background-color:blue;
+  color: #FFFFFF;
+}
+
+#horizontal
+{
+  background-color: yellow;
+}
+
+.button_stuff
+{
+  position:relative;
+  z-index: 2;
+}
+*/
