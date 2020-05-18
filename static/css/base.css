@@ -14,11 +14,17 @@ html
 {
   background-color: rgb(53, 53, 53);
   font-family: 'Merriweather', serif;
+  height: 100%;
 }
 
 label
 {
   color: #8cb67f;
+}
+
+body
+{
+  height: 100%;
 }
 
 /* NavBar */
@@ -65,31 +71,62 @@ label
 {
   color: #8cb67f;
   text-align: center;
-  font-size: 400%;
+  font-size: 150%;
   padding: 2% 2%;
   text-shadow: 2px 2px 2px #aaa;
 }
 .container
 {
   text-align: center;
-  border-radius: 400px;
+  border-radius: 50px;
   background-color: #f2f2f2;
-  padding: 2%;
+  padding: 2% 2%;
+  margin: 2%;
 }
 
-#messagebox
+#messageinput
 {
   width: 100%;
-  padding: 1% 1%;
-  margin: 8px 0;
+  padding: 2% 2%;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 1%;
   box-sizing: border-box;
+  resize: none;
+}
+
+ul {
+  margin: 0;
+  padding: 2% 2%;
+  list-style: none;
+}
+
+ul li {
+  text-align: center;
+  border-radius: 200px;
+  font-size: 8px;
+  background-color: #aae6f5;
+  padding: 2% 2%;
+  margin: 2%;
 }
 
 /* About */
 
+.subtle
+{
+  color: #6cb357;
+  text-align: center;
+  font-size: 100%;
+  padding: 1% 1%;
+}
+
+iframe
+{
+  display: block;
+  position: relative;
+  height: 70%;
+  width: 70%;
+  margin: 0 auto;
+}
 
 
 

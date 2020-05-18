@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="/static/css/base.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
   <script type="text/javascript" src="/static/js/function.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </header>
 
 <!--Body-->
@@ -26,11 +27,18 @@
 
   <!--Input Form-->
   <div class="container">
-    <form class="messagebox">
-      <label for="messagebox">Message</label>
-      <textarea id="messagebox" name="messagebox" placeholder="Insert message here.."></textarea>
-      <input type="submit" value="Add">
-    </form>
+    <label for="messageinput">Post a Message!</label>
+    <textarea id="messageinput" name="messageinput" placeholder="Insert message here.."></textarea>
+    <input type="submit" value="Add" onclick="addMessage()">
+  </div>
+
+  <div class="container">
+    <input type="submit" value="Clear Messages" onclick="clearMessages()">
+    <ul id="messages">
+      <script>
+        initMessages();
+      </script>
+    </ul>
   </div>
 
   <!--TODO-->

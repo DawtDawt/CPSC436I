@@ -7,6 +7,50 @@
  * Copyright:  none
  *
  ************/
+const initialMessages = '{"name":"messages","messages":[{"message":"Hi this is the first demo message","author":"TJ"},{"message":"Now try creating your own messages","author":"TJ"}]}';
+
+function initMessages() {
+  const listOfMessages = JSON.parse(initialMessages);
+  // console.log(listOfMessages);
+  for (let messageObj of listOfMessages.messages)
+  {
+    const message = messageObj.message;
+    if (message === "")
+    {
+      alert("One of the initial messages is empty.")
+    }
+    else
+    {
+      const li = document.createElement("li");
+      const child = document.createTextNode(message);
+      li.appendChild(child);
+      document.getElementById("messages").appendChild(li);
+    }
+  }
+}
+
+function addMessage() {
+  const li = document.createElement("li");
+  const input = document.getElementById("messageinput").value;
+  const child = document.createTextNode(input);
+  li.appendChild(child);
+  if (input === "") {
+    alert("Cannot add an empty message.");
+  }
+  else {
+    document.getElementById("messages").appendChild(li);
+  }
+  document.getElementById("messageinput").value = "";
+}
+
+function clearMessages()
+{
+  const list = document.getElementById("messages");
+  while (list.hasChildNodes())
+  {
+    list.removeChild(list.childNodes[0]);
+  }
+}
 
 // TODO
 
