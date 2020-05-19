@@ -109,6 +109,17 @@ ul li {
   margin: 2%;
 }
 
+.close {
+  color: rgb(0, 0, 0);
+  float: right;
+  font-size: 10px;
+}
+
+.close:hover {
+  background-color: #0306bd;
+  color: rgb(255, 255, 255);
+}
+
 /* About */
 
 .subtle

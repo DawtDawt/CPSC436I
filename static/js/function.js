@@ -7,7 +7,12 @@
  * Copyright:  none
  *
  ************/
+
+/* Local data */
 const initialMessages = '{"name":"messages","messages":[{"message":"Hi this is the first demo message","author":"TJ"},{"message":"Now try creating your own messages","author":"TJ"}]}';
+let listOfClose = [];
+
+/* Functions */
 
 function initMessages() {
   const listOfMessages = JSON.parse(initialMessages);
@@ -27,6 +32,26 @@ function initMessages() {
       document.getElementById("messages").appendChild(li);
     }
   }
+  /* the below idea is based off of a tutorial */
+  // add close buttons
+  const listOfLi = document.getElementsByTagName("li");
+  for (let i = 0; i < listOfLi.length; i++)
+  {
+    const span = document.createElement("span");
+    span.className = "close";
+    span.appendChild(document.createTextNode("\u0445"));
+    listOfLi[i].appendChild(span);
+  }
+  // implement close functions
+  listOfClose = document.getElementsByClassName("close");
+  for (let i = 0; i < listOfClose.length; i++)
+  {
+    listOfClose[i].onclick = function()
+    {
+      const div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
 }
 
 function addMessage() {
@@ -41,6 +66,21 @@ function addMessage() {
     document.getElementById("messages").appendChild(li);
   }
   document.getElementById("messageinput").value = "";
+  // add close functionality and button
+  // add close button
+  const span = document.createElement("span");
+  span.className = "close";
+  span.appendChild(document.createTextNode("\u0445"));
+  li.appendChild(span);
+  // implement close function
+  for (let i = 0; i < listOfClose.length; i++)
+  {
+    listOfClose[i].onclick = function()
+    {
+      const div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
 }
 
 function clearMessages()
@@ -51,6 +91,7 @@ function clearMessages()
     list.removeChild(list.childNodes[0]);
   }
 }
+
 
 // TODO
 
