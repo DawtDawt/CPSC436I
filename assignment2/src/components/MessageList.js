@@ -1,13 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux'
-
-const Message = ({ message }) => {
-  return (
-    <li>
-      {message.content}
-    </li>
-  );
-}
+import ClearMessages from './ClearMessages'
+import Message from '../pages/Message'
 
 const MapMessages = ({ messages }) => {
   return (
@@ -17,14 +11,17 @@ const MapMessages = ({ messages }) => {
   );
 }
 
-function MessageList({ messages }) {
-  return (
+class MessageList extends React.Component {
+  render() {
+    return (
     <div className="container">
-      <ul>
-        <MapMessages messages={messages} />
+      <ClearMessages />
+      <ul id="messages">
+        <MapMessages messages={this.props.messages} />
       </ul>
     </div>
   );
+  }
 }
 
 const mapStateToProps = (state) => {

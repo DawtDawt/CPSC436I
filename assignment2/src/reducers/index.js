@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_MESSAGE } from '../actions/types'
+import { ADD_MESSAGE, CLEAR_MESSAGE } from '../actions/types'
 
 const initMessageState = [
 	{ id: 0, content: 'Dummy message 1' },
@@ -9,6 +9,7 @@ const initMessageState = [
 const messagesReducer = (messages = initMessageState, action) => {
 	switch (action.type) {
 		case ADD_MESSAGE:
+			console.log("adding");
 			return [
 				...messages,
 				{
@@ -17,7 +18,13 @@ const messagesReducer = (messages = initMessageState, action) => {
 				}
 			];
 
+		case CLEAR_MESSAGE:
+			console.log("clearing");
+			messages = [];
+			return messages;
+
 		default:
+			console.log("defaulting");
 			return messages;
 	}
 }
