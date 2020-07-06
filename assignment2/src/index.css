@@ -122,6 +122,11 @@ ul li {
   font-size: 20px;
 }
 
+.date {
+  float: left;
+  margin: 0;
+}
+
 /*
 .close {
   color: rgb(0, 0, 0);

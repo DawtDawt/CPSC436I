@@ -4,17 +4,17 @@ import { connect } from 'react-redux'
 class Popup extends React.Component {
   render() {
     return (
-      <text>{this.props.value}
+      <>{this.props.value}
         {this.props.showPopup ?
           <div className='popup'>
             <div className='popup_inner'>
-              <h1>{this.props.value}</h1>
+              <h1>{this.props.date}: {this.props.value}</h1>
               <button className='popup_button' onClick={this.props.closePopup}>close me</button>
             </div>
           </div>
           : null
         }
-      </text>
+      </>
     );
   }
 }
@@ -34,7 +34,8 @@ class Message extends React.Component {
   render() {
     return (
       <li>
-        <Popup closePopup={this.togglePopup} showPopup={this.state.showPopup} value={this.props.message.content}></Popup>
+        <h3 className='date'>{this.props.message.date}</h3>
+        <Popup closePopup={this.togglePopup} showPopup={this.state.showPopup} value={this.props.message.content} date={this.props.message.date}></Popup>
         <button className='expand_button' onClick={this.togglePopup}>Expand</button>
       </li>
     );

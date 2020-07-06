@@ -1,26 +1,32 @@
 import { combineReducers } from 'redux';
-import { ADD_MESSAGE, CLEAR_MESSAGE } from '../actions/types'
+import { ADD_MESSAGE_SUCCESS, CLEAR_MESSAGE_SUCCESS, GET_MESSAGE_SUCCESS } from '../actions/types'
 
 const initMessageState = [
-	{ id: 0, content: 'Dummy message 1' },
-	{ id: 1, content: 'Dummy message 2' }
+	{ content: 'Dummy message 1', date: 'Jan 01, 2020' },
+	{ content: 'Dummy message 2', date: 'Jan 02, 2020' }
 ]
 
 const messagesReducer = (messages = initMessageState, action) => {
 	switch (action.type) {
-		case ADD_MESSAGE:
+		case ADD_MESSAGE_SUCCESS:
 			console.log("adding");
+			console.log(action);
 			return [
 				...messages,
 				{
-					id: action.id,
-					content: action.message
+					content: action.content,
+					date: action.date
 				}
 			];
 
-		case CLEAR_MESSAGE:
+		case CLEAR_MESSAGE_SUCCESS:
 			console.log("clearing");
 			messages = [];
+			return messages;
+
+		case GET_MESSAGE_SUCCESS:
+			console.log("getting");
+			messages = action.payload;
 			return messages;
 
 		default:

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import ClearMessages from './ClearMessages'
 import Message from '../pages/Message'
+import { apiGetMessages } from '../api';
 
 const MapMessages = ({ messages }) => {
   return (
@@ -12,6 +13,11 @@ const MapMessages = ({ messages }) => {
 }
 
 class MessageList extends React.Component {
+  constructor(props) {
+    super(props);
+    apiGetMessages();
+  }
+
   render() {
     return (
     <div className="container">

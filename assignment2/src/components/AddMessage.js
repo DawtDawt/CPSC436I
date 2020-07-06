@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addMessage } from '../actions/index'
+import { apiAddMessage } from '../api'
 
 
 let buffer = '';
@@ -11,8 +11,7 @@ class AddMessage extends React.Component {
   }
 
   Add = () => {
-    this.props.addMessage(buffer);
-    buffer = '';
+    apiAddMessage(buffer, new Date().toISOString().split('T')[0]);
   }
 
   render() {
@@ -26,4 +25,4 @@ class AddMessage extends React.Component {
   }
 }
 
-export default connect(null, { addMessage })(AddMessage);
+export default connect()(AddMessage);

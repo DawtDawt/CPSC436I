@@ -1,17 +1,22 @@
-import { ADD_MESSAGE, CLEAR_MESSAGE } from './types'
+import { ADD_MESSAGE_SUCCESS, CLEAR_MESSAGE_SUCCESS, GET_MESSAGE_SUCCESS } from './types'
 
-let currId = 0;
-
-export const addMessage = (message) => (
+export const addMessageSuccess = res => (
   {
-    type: ADD_MESSAGE,
-    id: currId++,
-    message
+    type: ADD_MESSAGE_SUCCESS,
+    content: res.content,
+    date: res.date
   }
 )
 
-export const clearMessage = () => (
+export const clearMessageSuccess = () => (
   {
-    type: CLEAR_MESSAGE
+    type: CLEAR_MESSAGE_SUCCESS
+  }
+)
+
+export const getMessageSuccess = (res) => (
+  {
+    type: GET_MESSAGE_SUCCESS,
+    payload: res
   }
 )

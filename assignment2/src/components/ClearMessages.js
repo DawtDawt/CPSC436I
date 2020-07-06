@@ -1,10 +1,10 @@
 import React from 'react'
-import { clearMessage } from '../actions/index'
+import { apiClearMessages } from '../api'
 import { connect } from 'react-redux';
 
 class ClearMessages extends React.Component {
   Clear = () => {
-    this.props.clearMessage();
+    apiClearMessages();
     console.log("clear 1");
   }
 
@@ -15,4 +15,4 @@ class ClearMessages extends React.Component {
   }
 }
 
-export default connect(null, { clearMessage })(ClearMessages);
+export default connect()(ClearMessages);
