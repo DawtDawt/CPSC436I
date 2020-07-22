@@ -6,6 +6,8 @@ require("dotenv").config();
 /* Init Mongoose */
 
 const mongooseOptions = {
+  user: "tjwu",
+  pass: "83675518",
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
@@ -15,8 +17,7 @@ const mongooseOptions = {
   keepAlive: true
 };
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/assignment4`, mongooseOptions);
-
+mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://cpsc436i.ftuby.mongodb.net/<dbname>`, mongooseOptions);
 /* Test Mongoose Connection */
 
 const db = mongoose.connection;
@@ -98,11 +99,11 @@ app.get("/", (request, response) => {
   response.status(200).send("ok");
 });
 
-app.get("/assignment4/messages", getMessages);
+app.get("/messages", getMessages);
 
-app.post("/assignment4/message", addMessage);
+app.post("/message", addMessage);
 
-app.delete("/assignment4/messages", clearMessages);
+app.delete("/messages", clearMessages);
 
 /* Thread */
 
