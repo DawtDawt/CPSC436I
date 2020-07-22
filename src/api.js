@@ -3,7 +3,7 @@ import { store } from "./index";
 import { addMessageSuccess, clearMessageSuccess, getMessageSuccess } from "./actions/index";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000"
+  baseURL: "https://cpsc436i-assignment-backend.herokuapp.com/"
 });
 
 export function apiGetMessages() {
