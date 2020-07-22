@@ -17,7 +17,7 @@ const mongooseOptions = {
   keepAlive: true
 };
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://cpsc436i.ftuby.mongodb.net/<dbname>`, mongooseOptions);
+mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://cpsc436i.ftuby.mongodb.net/assignment`, mongooseOptions);
 /* Test Mongoose Connection */
 
 const db = mongoose.connection;
